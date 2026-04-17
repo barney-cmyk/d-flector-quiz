@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Find Your Stone Guard in 60 Seconds | D-Flector</title>
+<meta name="description" content="Answer 3 quick questions and we'll match you with the perfect stone guard for your boat or jet ski. Australian Made. Free Shipping.">
+<meta name="robots" content="noindex">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2395495537406785');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2395495537406785&ev=PageView&noscript=1"/></noscript>
+
+<style>
+/* ============================================
+   D-FLECTOR QUIZ FUNNEL — mobile.d-flector.com.au
+   Mobile-first, conversion-optimised
+   ============================================ */
+
+:root {
+  --primary: #1B5E20;
+  --primary-light: #2E7D32;
+  --primary-dark: #0D3B13;
+  --accent: #FF6F00;
+  --accent-hover: #E65100;
+  --gold: #F9A825;
+  --bg: #FAFAFA;
+  --card-bg: #FFFFFF;
+  --text: #1A1A1A;
+  --text-secondary: #555;
+  --text-light: #888;
+  --border: #E0E0E0;
+  --danger: #C62828;
+  --success: #2E7D32;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
+  --radius: 12px;
+  --radius-lg: 16px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Hide everything except active step */
+.step { display: none; min-height: 100dvh; padding-bottom: 100px; }
+.step.active { display: block; animation: fadeIn 0.3s ease; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Progress Bar ---- */
+.progress-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: #fff; border-bottom: 1px solid var(--border);
+  padding: 12px 20px 10px;
+}
+.progress-track {
+  height: 6px; background: #E8E8E8; border-radius: 3px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 3px; transition: width 0.5s ease;
+}
+.progress-label {
+  font-size: 12px; color: var(--text-light); margin-top: 4px;
+  text-align: center; font-weight: 500;
+}
+
+/* ---- Step Container ---- */
+.step-content {
+  max-width: 480px; margin: 0 auto; padding: 80px 20px 20px;
+}
+
+/* ---- Hero Section (Step 1) ---- */
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #E8F5E9; color: var(--primary); font-size: 13px;
+  font-weight: 600; padding: 6px 14px; border-radius: 20px;
+  margin-bottom: 16px;
+}
+.hero-badge img { height: 16px; }
+
+h1 {
+  font-size: 28px; font-weight: 800; line-height: 1.2;
+  margin-bottom: 8px; letter-spacing: -0.5px;
+}
+h1 span { color: var(--primary); }
+
+.hero-sub {
+  font-size: 16px; color: var(--text-secondary); margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+/* ---- Selection Cards ---- */
+.option-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--card-bg); border: 2px solid var(--border);
+  border-radius: var(--radius); padding: 20px;
+  margin-bottom: 12px; cursor: pointer;
+  transition: all 0.2s ease; -webkit-tap-highlight-color: transparent;
+}
+.option-card:hover, .option-card:active {
+  border-color: var(--primary); background: #F1F8E9;
+  transform: scale(1.01);
+}
+.option-card.selected {
+  border-color: var(--primary); background: #E8F5E9;
+  box-shadow: 0 0 0 3px rgba(27,94,32,0.15);
+}
+.option-icon {
+  width: 56px; height: 56px; border-radius: 12px;
+  background: #F5F5F5; display: flex; align-items: center;
+  justify-content: center; font-size: 28px; flex-shrink: 0;
+}
+.option-label { font-size: 17px; font-weight: 600; }
+.option-desc { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+
+/* ---- Size Cards (Step 2) ---- */
+.size-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--card-bg); border: 2px solid var(--border);
+  border-radius: var(--radius); padding: 18px 20px;
+  margin-bottom: 10px; cursor: pointer;
+  transition: all 0.2s ease; -webkit-tap-highlight-color: transparent;
+}
+.size-card:hover, .size-card:active {
+  border-color: var(--primary); background: #F1F8E9;
+}
+.size-card .size-icon {
+  font-size: 32px; width: 48px; text-align: center; flex-shrink: 0;
+}
+.size-card .size-label { font-size: 16px; font-weight: 600; }
+.size-card .size-range { font-size: 13px; color: var(--text-light); }
+.size-card .size-examples { font-size: 12px; color: var(--text-light); }
+
+/* ---- Result Page (Step 3) ---- */
+.result-header {
+  text-align: center; padding: 10px 0 20px;
+}
+.result-header h2 {
+  font-size: 22px; font-weight: 700; line-height: 1.3;
+}
+.result-header h2 span { color: var(--primary); }
+
+.product-image-wrap {
+  background: #fff; border-radius: var(--radius-lg);
+  overflow: hidden; margin-bottom: 20px; box-shadow: var(--shadow);
+}
+.product-image-wrap img {
+  width: 100%; height: auto; display: block;
+}
+.product-image-placeholder {
+  width: 100%; aspect-ratio: 4/3; background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 80px; color: var(--primary-light);
+}
+
+.rating-row {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 16px; justify-content: center;
+}
+.stars { color: var(--gold); font-size: 18px; letter-spacing: 1px; }
+.rating-text { font-size: 14px; color: var(--text-secondary); font-weight: 500; }
+
+/* Cost comparison box */
+.cost-box {
+  background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+  border: 2px solid #FFB74D;
+  border-radius: var(--radius); padding: 20px;
+  margin-bottom: 20px;
+}
+.cost-box h3 {
+  font-size: 15px; font-weight: 700; color: #E65100;
+  margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.cost-row {
+  display: flex; justify-content: space-between; padding: 4px 0;
+  font-size: 15px;
+}
+.cost-row.danger { color: var(--danger); }
+.cost-row.total {
+  border-top: 2px solid #FFB74D; margin-top: 8px; padding-top: 10px;
+  font-weight: 700; font-size: 16px; color: var(--danger);
+}
+.cost-row.save {
+  font-weight: 800; font-size: 18px; color: var(--success);
+  padding-top: 6px;
+}
+.cost-row .product-price {
+  font-size: 22px; font-weight: 800; color: var(--primary-dark);
+}
+
+/* Benefits list */
+.benefits {
+  list-style: none; margin: 20px 0;
+}
+.benefits li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0; font-size: 15px;
+}
+.benefits li .check {
+  color: var(--success); font-weight: 700; font-size: 18px;
+  flex-shrink: 0; margin-top: 1px;
+}
+
+/* Testimonial */
+.testimonial {
+  background: var(--card-bg); border-radius: var(--radius);
+  padding: 16px 20px; margin: 20px 0;
+  border-left: 4px solid var(--primary);
+}
+.testimonial p {
+  font-size: 15px; font-style: italic; color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.testimonial .author { font-size: 13px; color: var(--text-light); font-weight: 600; }
+
+/* CTA Button */
+.cta-wrap {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; border-top: 1px solid var(--border);
+  padding: 12px 20px; z-index: 100;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.cta-btn {
+  display: block; width: 100%; max-width: 480px; margin: 0 auto;
+  background: linear-gradient(135deg, var(--accent), #FF8F00);
+  color: #fff; border: none; border-radius: var(--radius);
+  padding: 18px; font-size: 18px; font-weight: 700;
+  cursor: pointer; text-align: center;
+  box-shadow: 0 4px 16px rgba(255,111,0,0.35);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.cta-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(255,111,0,0.45); }
+.cta-btn:active { transform: scale(0.98); }
+.cta-sub {
+  text-align: center; font-size: 13px; color: var(--text-light);
+  margin-top: 6px; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.cta-sub img { height: 16px; vertical-align: middle; margin-right: 4px; }
+
+.guarantee-row {
+  display: flex; justify-content: center; gap: 6px;
+  align-items: center; margin-top: 8px;
+  font-size: 12px; color: var(--text-light);
+}
+
+/* Trust badges */
+.trust-badges {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin: 20px 0;
+}
+.trust-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 12px;
+}
+.trust-badge .badge-icon { font-size: 22px; flex-shrink: 0; }
+.trust-badge .badge-text { font-size: 12px; font-weight: 600; line-height: 1.3; }
+
+/* Step 4: Cart summary */
+.cart-section {
+  background: var(--card-bg); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow); overflow: hidden; margin-bottom: 16px;
+}
+.cart-header {
+  background: var(--primary); color: #fff; padding: 14px 20px;
+  font-size: 14px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.cart-body { padding: 20px; }
+
+.cart-line {
+  display: flex; justify-content: space-between; padding: 8px 0;
+  font-size: 15px;
+}
+.cart-line.free { color: var(--success); }
+.cart-line.total {
+  border-top: 2px solid var(--border); padding-top: 12px;
+  margin-top: 8px; font-weight: 700; font-size: 18px;
+}
+
+.gift-banner {
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  border: 2px dashed var(--primary);
+  border-radius: var(--radius); padding: 16px 20px;
+  margin-bottom: 16px; text-align: center;
+}
+.gift-banner .gift-title {
+  font-size: 16px; font-weight: 700; color: var(--primary-dark);
+  margin-bottom: 4px;
+}
+.gift-banner .gift-sub {
+  font-size: 13px; color: var(--text-secondary);
+}
+.gift-banner .gift-timer {
+  font-size: 14px; font-weight: 600; color: var(--accent);
+  margin-top: 6px;
+}
+
+/* Upsell */
+.upsell-card {
+  background: #FFF8E1; border: 1px solid #FFE082;
+  border-radius: var(--radius); padding: 16px 20px;
+  margin-bottom: 16px;
+}
+.upsell-card h4 {
+  font-size: 14px; font-weight: 700; color: #F57F17;
+  margin-bottom: 6px;
+}
+.upsell-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; }
+.upsell-btn {
+  background: #F57F17; color: #fff; border: none;
+  border-radius: 8px; padding: 10px 20px;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  transition: all 0.2s ease;
+}
+.upsell-btn:hover { background: #EF6C00; }
+.upsell-btn.added { background: var(--success); pointer-events: none; }
+
+/* Social proof ticker */
+.social-ticker {
+  background: var(--card-bg); border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px;
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 16px; font-size: 13px; color: var(--text-secondary);
+}
+.social-ticker .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--success); flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Checkout options (Step 5) */
+.checkout-options {
+  display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 20px;
+}
+.checkout-btn {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; padding: 16px;
+  border-radius: var(--radius); font-size: 16px; font-weight: 600;
+  cursor: pointer; transition: all 0.2s ease;
+  text-decoration: none; border: 2px solid transparent;
+}
+.checkout-btn.shopify {
+  background: #5C6AC4; color: #fff;
+}
+.checkout-btn.apple {
+  background: #000; color: #fff;
+}
+.checkout-btn.afterpay {
+  background: #B2FCE4; color: #000; border-color: #00C2A8;
+}
+.checkout-btn.card {
+  background: var(--card-bg); color: var(--text);
+  border-color: var(--border);
+}
+.checkout-btn:hover { transform: translateY(-1px); opacity: 0.95; }
+
+.divider {
+  display: flex; align-items: center; gap: 12px;
+  margin: 16px 0; color: var(--text-light); font-size: 13px;
+}
+.divider::before, .divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+/* Security note */
+.security-note {
+  text-align: center; padding: 16px;
+  font-size: 13px; color: var(--text-light);
+}
+.security-note span { font-weight: 600; }
+
+/* Social proof at bottom of step 1 */
+.social-strip {
+  display: flex; align-items: center; justify-content: center;
+  gap: 16px; margin-top: 30px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.social-stat {
+  text-align: center;
+}
+.social-stat .num { font-size: 22px; font-weight: 800; color: var(--primary); }
+.social-stat .label { font-size: 11px; color: var(--text-light); text-transform: uppercase; letter-spacing: 0.3px; }
+
+/* Back button */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: none; border: none; color: var(--text-light);
+  font-size: 14px; cursor: pointer; padding: 8px 0;
+  margin-bottom: 8px;
+}
+.back-btn:hover { color: var(--text); }
+
+/* Responsive tweaks */
+@media (min-width: 600px) {
+  h1 { font-size: 36px; }
+  .step-content { padding-top: 90px; }
+  .trust-badges { grid-template-columns: 1fr 1fr 1fr 1fr; }
+}
+
+/* Loading spinner */
+.spinner {
+  display: inline-block; width: 20px; height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-top-color: #fff; border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-right: 8px; vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Afterpay badge inline */
+.afterpay-inline {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-weight: 600;
+}
+
+/* Hide on specific steps */
+.cta-wrap.hidden { display: none; }
+</style>
+</head>
+<body>
+
+<!-- ============ PROGRESS BAR ============ -->
+<div class="progress-bar">
+  <div class="progress-track">
+    <div class="progress-fill" id="progressFill" style="width: 33%"></div>
+  </div>
+  <div class="progress-label" id="progressLabel">Step 1 of 3</div>
+</div>
+
+<!-- ============ STEP 1: WHAT DO YOU TOW? ============ -->
+<div class="step active" id="step1">
+  <div class="step-content">
+    <div class="hero-badge">
+      <span>🇦🇺</span> Australian Made & Owned
+    </div>
+
+    <h1>Find Your <span>Stone Guard</span> in 60 Seconds</h1>
+    <p class="hero-sub">Answer 3 quick questions and we'll match you with the perfect stone guard for your setup.</p>
+
+    <div class="option-card" onclick="selectVehicle('boat')">
+      <div class="option-icon">🚤</div>
+      <div>
+        <div class="option-label">Boat</div>
+        <div class="option-desc">Tinnies, runabouts, centre consoles, cruisers</div>
+      </div>
+    </div>
+
+    <div class="option-card" onclick="selectVehicle('jetski')">
+      <div class="option-icon">🏄</div>
+      <div>
+        <div class="option-label">Jet Ski / PWC</div>
+        <div class="option-desc">All brands and trailer types</div>
+      </div>
+    </div>
+
+    <div class="option-card" onclick="selectVehicle('other')">
+      <div class="option-icon">🏕️</div>
+      <div>
+        <div class="option-label">Caravan / Camper</div>
+        <div class="option-desc">Caravans, camper trailers, pop-tops</div>
+      </div>
+    </div>
+
+    <div class="social-strip">
+      <div class="social-stat">
+        <div class="num">1,930+</div>
+        <div class="label">Happy Customers</div>
+      </div>
+      <div class="social-stat">
+        <div class="num">4.8</div>
+        <div class="label">Star Rating</div>
+      </div>
+      <div class="social-stat">
+        <div class="num">Since 2007</div>
+        <div class="label">Manufacturing</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 2: SIZE (BOAT) ============ -->
+<div class="step" id="step2-boat">
+  <div class="step-content">
+    <button class="back-btn" onclick="goBack('step1')">&#8592; Back</button>
+    <h1>What size is your <span>boat</span>?</h1>
+    <p class="hero-sub">Select the closest match — we'll recommend the perfect guard.</p>
+
+    <div class="size-card" onclick="selectSize('small')">
+      <div class="size-icon">🛶</div>
+      <div>
+        <div class="size-label">Small — Under 4.5m</div>
+        <div class="size-examples">Tinnies, dinghies, small runabouts</div>
+      </div>
+    </div>
+
+    <div class="size-card" onclick="selectSize('medium')">
+      <div class="size-icon">🚤</div>
+      <div>
+        <div class="size-label">Medium — 4.5m to 5.5m</div>
+        <div class="size-examples">Runabouts, centre consoles, bass boats</div>
+      </div>
+    </div>
+
+    <div class="size-card" onclick="selectSize('large')">
+      <div class="size-icon">⛵</div>
+      <div>
+        <div class="size-label">Large — 5.5m to 6.5m</div>
+        <div class="size-examples">Half cabs, large centre consoles, bowriders</div>
+      </div>
+    </div>
+
+    <div class="size-card" onclick="selectSize('xlarge')">
+      <div class="size-icon">🚢</div>
+      <div>
+        <div class="size-label">Extra Large — 6.5m+</div>
+        <div class="size-examples">Cruisers, large half cabs, walk-arounds</div>
+      </div>
+    </div>
+
+    <p style="text-align:center; font-size:13px; color:var(--text-light); margin-top:16px;">
+      Not sure? Measure bow to stern on the trailer. We'll match the guard.
+    </p>
+  </div>
+</div>
+
+<!-- ============ STEP 2: JETSKI (skip to result) ============ -->
+<!-- Jet ski goes straight to step 3 -->
+
+<!-- ============ STEP 3: RECOMMENDATION ============ -->
+<div class="step" id="step3">
+  <div class="step-content">
+    <button class="back-btn" onclick="goBackFromResult()">&#8592; Back</button>
+
+    <div class="result-header">
+      <h2>Perfect match for your <span id="resultVehicleLabel">medium boat</span> &#10003;</h2>
+    </div>
+
+    <!-- Product Image -->
+    <div class="product-image-wrap">
+      <div class="product-image-placeholder" id="productImagePlaceholder">🛡️</div>
+      <!-- Replace placeholder with real product image:
+           <img src="YOUR_PRODUCT_IMAGE_URL" alt="D-Flector Stone Guard" id="productImage"> -->
+    </div>
+
+    <div style="text-align:center; margin-bottom:8px;">
+      <h2 style="font-size:24px; font-weight:800;" id="productName">D-Flector D500</h2>
+      <p style="font-size:14px; color:var(--text-secondary);" id="productFitsLabel">Fits boats 4.5m – 5.5m</p>
+    </div>
+
+    <div class="rating-row">
+      <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <span class="rating-text">4.8/5 from 47 reviews</span>
+    </div>
+
+    <!-- Cost comparison / Price anchoring -->
+    <div class="cost-box">
+      <h3>The cost of NOT protecting your boat</h3>
+      <div class="cost-row danger">
+        <span>Gelcoat respray</span>
+        <span>$3,500</span>
+      </div>
+      <div class="cost-row danger">
+        <span>Stone chip repair (6 spots)</span>
+        <span>$1,200</span>
+      </div>
+      <div class="cost-row danger">
+        <span>Lost resale value</span>
+        <span>$2,000+</span>
+      </div>
+      <div class="cost-row total">
+        <span>TOTAL RISK</span>
+        <span>$6,700+</span>
+      </div>
+      <div class="cost-row save" style="margin-top:12px;">
+        <span>Your D-Flector</span>
+        <span class="product-price" id="productPrice">$1,399</span>
+      </div>
+      <div class="cost-row save">
+        <span>YOU SAVE</span>
+        <span id="savingsAmount">$5,301+</span>
+      </div>
+    </div>
+
+    <!-- Benefits -->
+    <ul class="benefits">
+      <li><span class="check">&#10003;</span> Installs in 10 minutes — no drilling required</li>
+      <li><span class="check">&#10003;</span> Marine-grade 316 stainless steel</li>
+      <li><span class="check">&#10003;</span> 3-year Australian warranty</li>
+      <li><span class="check">&#10003;</span> Free shipping Australia-wide</li>
+      <li><span class="check">&#10003;</span> 30-day money-back guarantee</li>
+    </ul>
+
+    <!-- Testimonial -->
+    <div class="testimonial">
+      <p>"Saved my hull from $3,500 in gelcoat damage on the very first trip. Best money I've ever spent on my boat."</p>
+      <div class="author">— Mark T., Queensland</div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <span class="badge-icon">🇦🇺</span>
+        <span class="badge-text">Australian Made & Owned</span>
+      </div>
+      <div class="trust-badge">
+        <span class="badge-icon">🛡️</span>
+        <span class="badge-text">3-Year Warranty</span>
+      </div>
+      <div class="trust-badge">
+        <span class="badge-icon">🚚</span>
+        <span class="badge-text">Free Shipping</span>
+      </div>
+      <div class="trust-badge">
+        <span class="badge-icon">↩️</span>
+        <span class="badge-text">30-Day Returns</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed CTA -->
+  <div class="cta-wrap" id="ctaStep3">
+    <button class="cta-btn" onclick="goToCart()">
+      PROTECT MY BOAT — <span id="ctaPrice">$1,399</span>
+    </button>
+    <div class="cta-sub">
+      or <span id="afterpayPrice">$349.75</span>/fortnight with <strong>Afterpay</strong>
+    </div>
+    <div class="guarantee-row">
+      🔒 30-day money-back guarantee &middot; 🇦🇺 Australian Made
+    </div>
+  </div>
+</div>
+
+<!-- ============ STEP 4: CART + OFFERS ============ -->
+<div class="step" id="step4">
+  <div class="step-content">
+    <button class="back-btn" onclick="goBack('step3')">&#8592; Back</button>
+
+    <!-- Free gift banner -->
+    <div class="gift-banner">
+      <div class="gift-title">🎁 FREE Bungee Cord Set Included!</div>
+      <div class="gift-sub">Worth $44.90 — included with your order today</div>
+      <div class="gift-timer" id="giftTimer">Offer ends in 23:47:12</div>
+    </div>
+
+    <!-- Social proof ticker -->
+    <div class="social-ticker">
+      <span class="dot"></span>
+      <span id="socialProofText">12 people viewed this product today</span>
+    </div>
+
+    <!-- Cart summary -->
+    <div class="cart-section">
+      <div class="cart-header">Your Order</div>
+      <div class="cart-body">
+        <div class="cart-line">
+          <span id="cartProductName">D-Flector D500</span>
+          <span id="cartProductPrice">$1,399</span>
+        </div>
+        <div class="cart-line free">
+          <span>FREE: Bungee Cord Set</span>
+          <span><s style="color:var(--text-light);">$44.90</s> $0.00</span>
+        </div>
+        <div class="cart-line free">
+          <span>Shipping</span>
+          <span>FREE</span>
+        </div>
+        <div class="cart-line" id="upsellCartLine" style="display:none;">
+          <span>Replacement Mesh Cover</span>
+          <span>$220.00</span>
+        </div>
+        <div class="cart-line total">
+          <span>TOTAL</span>
+          <span id="cartTotal">$1,399</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upsell offer -->
+    <div class="upsell-card">
+      <h4>⚡ Complete Protection</h4>
+      <p>Add a Heavy Duty replacement mesh cover — swap in 2 minutes if yours ever gets damaged on the road.</p>
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:18px; font-weight:700;">$535</span>
+        <button class="upsell-btn" id="upsellBtn" onclick="addUpsell()">+ Add to Order</button>
+      </div>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="trust-badges">
+      <div class="trust-badge">
+        <span class="badge-icon">🔒</span>
+        <span class="badge-text">Secure Checkout</span>
+      </div>
+      <div class="trust-badge">
+        <span class="badge-icon">🇦🇺</span>
+        <span class="badge-text">Australian Made</span>
+      </div>
+      <div class="trust-badge">
+        <span class="badge-icon">📦</span>
+        <span class="badge-text">Free Shipping</span>
+      </div>
+      <div class="trust-badge">
+        <span class="badge-icon">↩️</span>
+        <span class="badge-text">30-Day Returns</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed CTA -->
+  <div class="cta-wrap">
+    <a class="cta-btn" id="checkoutBtn" href="#" onclick="goToCheckout(event)">
+      COMPLETE YOUR ORDER
+    </a>
+    <div class="cta-sub">
+      or <span id="afterpayPriceCart">$349.75</span>/fortnight with <strong>Afterpay</strong>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+// =============================================
+// PRODUCT CONFIGURATION
+// =============================================
+// LIVE Shopify variant IDs and prices (verified 17 Apr 2026)
+const PRODUCTS = {
+  boat_small: {
+    name: 'D-Flector D400',
+    subtitle: 'Boat Stone Guard',
+    fits: 'Fits boats up to 4.5m',
+    price: 1139,
+    afterpay: 284.75,
+    variantId: '46348862849259',
+    handle: 'boat-stone-guard',
+    savings: 5561,
+    vehicleLabel: 'small boat'
+  },
+  boat_medium: {
+    name: 'D-Flector D500',
+    subtitle: 'Boat Stone Guard',
+    fits: 'Fits boats 4.5m – 5.5m',
+    price: 1799,
+    afterpay: 449.75,
+    variantId: '46383966945515',
+    handle: 'boat-stone-guard',
+    savings: 4901,
+    vehicleLabel: 'medium boat'
+  },
+  boat_large: {
+    name: 'D-Flector D600',
+    subtitle: 'Boat Stone Guard',
+    fits: 'Fits boats 5.5m – 6.5m',
+    price: 2189,
+    afterpay: 547.25,
+    variantId: '46383967076587',
+    handle: 'boat-stone-guard',
+    savings: 4511,
+    vehicleLabel: 'large boat'
+  },
+  boat_xlarge: {
+    name: 'D-Flector D700',
+    subtitle: 'Boat Stone Guard',
+    fits: 'Fits boats 6.5m – 8.5m',
+    price: 2639,
+    afterpay: 659.75,
+    variantId: '46383967207659',
+    handle: 'boat-stone-guard',
+    savings: 4061,
+    vehicleLabel: 'extra large boat'
+  },
+  jetski: {
+    name: 'D-Flector J100',
+    subtitle: 'Jet Ski Stone Guard',
+    fits: 'Fits all jet ski trailers',
+    price: 675,
+    afterpay: 168.75,
+    variantId: '46296194318571',
+    handle: 'jetski-stone-guard',
+    savings: 6025,
+    vehicleLabel: 'jet ski'
+  }
+};
+
+// Boat heavy duty cover upsell (replacement mesh)
+const UPSELL_VARIANT_ID = '46646216032491';
+const UPSELL_PRICE = 535;
+
+// Your Shopify store URL
+const STORE_URL = 'https://d-flector.com.au';
+
+// =============================================
+// STATE
+// =============================================
+let selectedVehicle = null;
+let selectedSize = null;
+let selectedProduct = null;
+let upsellAdded = false;
+
+// =============================================
+// NAVIGATION
+// =============================================
+function showStep(stepId) {
+  document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+  document.getElementById(stepId).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function updateProgress(step, total) {
+  const pct = (step / total) * 100;
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressLabel').textContent = `Step ${step} of ${total}`;
+}
+
+function goBack(targetStep) {
+  showStep(targetStep);
+  if (targetStep === 'step1') updateProgress(1, 3);
+  if (targetStep === 'step2-boat') updateProgress(2, 3);
+  if (targetStep === 'step3') updateProgress(3, 3);
+}
+
+function goBackFromResult() {
+  if (selectedVehicle === 'jetski') {
+    goBack('step1');
+    updateProgress(1, 3);
+  } else {
+    goBack('step2-boat');
+    updateProgress(2, 3);
+  }
+}
+
+// =============================================
+// STEP 1: Vehicle Selection
+// =============================================
+function selectVehicle(type) {
+  selectedVehicle = type;
+
+  // Track quiz start
+  track('trackCustom', 'QuizStart', { vehicle_type: type });
+
+  if (type === 'boat') {
+    updateProgress(2, 3);
+    showStep('step2-boat');
+  } else if (type === 'jetski') {
+    // Skip to result directly
+    selectedProduct = PRODUCTS.jetski;
+    updateProgress(3, 3);
+    renderResult();
+    showStep('step3');
+  } else {
+    // Caravan/Camper — redirect to main site
+    window.location.href = STORE_URL + '/collections/caravan-stone-guards';
+  }
+}
+
+// =============================================
+// STEP 2: Size Selection
+// =============================================
+function selectSize(size) {
+  selectedSize = size;
+  const key = 'boat_' + size;
+  selectedProduct = PRODUCTS[key];
+
+  // Track quiz step
+  track('trackCustom', 'QuizSizeSelected', { vehicle_type: 'boat', size: size });
+
+  updateProgress(3, 3);
+  renderResult();
+  showStep('step3');
+}
+
+// =============================================
+// STEP 3: Result Rendering
+// =============================================
+function renderResult() {
+  if (!selectedProduct) return;
+  const p = selectedProduct;
+  const isJetSki = selectedVehicle === 'jetski';
+
+  // Vehicle label
+  document.getElementById('resultVehicleLabel').textContent = p.vehicleLabel;
+
+  // Product info
+  document.getElementById('productName').textContent = p.name;
+  document.getElementById('productFitsLabel').textContent = p.fits;
+  document.getElementById('productPrice').textContent = '$' + p.price.toLocaleString();
+  document.getElementById('savingsAmount').textContent = '$' + p.savings.toLocaleString() + '+';
+
+  // CTA
+  document.getElementById('ctaPrice').textContent = '$' + p.price.toLocaleString();
+  document.getElementById('afterpayPrice').textContent = '$' + p.afterpay.toFixed(2);
+
+  // Update CTA text for jet ski
+  const ctaBtn = document.querySelector('#ctaStep3 .cta-btn');
+  if (isJetSki) {
+    ctaBtn.innerHTML = 'PROTECT MY JET SKI &mdash; $' + p.price.toLocaleString();
+    // Update cost box for jet ski damage
+    document.querySelector('.cost-box h3').textContent = 'The cost of NOT protecting your jet ski';
+  } else {
+    ctaBtn.innerHTML = 'PROTECT MY BOAT &mdash; $' + p.price.toLocaleString();
+  }
+
+  // Track view content
+  track('track', 'ViewContent', {
+    content_name: p.name,
+    content_type: 'product',
+    value: p.price,
+    currency: 'AUD'
+  });
+}
+
+// =============================================
+// STEP 4: Cart
+// =============================================
+function goToCart() {
+  if (!selectedProduct) return;
+  const p = selectedProduct;
+
+  // Populate cart
+  document.getElementById('cartProductName').textContent = p.name;
+  document.getElementById('cartProductPrice').textContent = '$' + p.price.toLocaleString();
+  document.getElementById('cartTotal').textContent = '$' + p.price.toLocaleString();
+  document.getElementById('afterpayPriceCart').textContent = '$' + p.afterpay.toFixed(2);
+
+  // Reset upsell
+  upsellAdded = false;
+  document.getElementById('upsellCartLine').style.display = 'none';
+  document.getElementById('upsellBtn').textContent = '+ Add to Order';
+  document.getElementById('upsellBtn').classList.remove('added');
+
+  // Start gift timer
+  startGiftTimer();
+
+  // Randomise social proof
+  randomiseSocialProof();
+
+  // Track AddToCart
+  track('track', 'AddToCart', {
+    content_name: p.name,
+    content_type: 'product',
+    value: p.price,
+    currency: 'AUD'
+  });
+
+  showStep('step4');
+}
+
+function addUpsell() {
+  if (upsellAdded) return;
+  upsellAdded = true;
+
+  const newTotal = selectedProduct.price + UPSELL_PRICE;
+  const newAfterpay = (newTotal / 4).toFixed(2);
+
+  document.getElementById('upsellCartLine').style.display = 'flex';
+  document.getElementById('cartTotal').textContent = '$' + newTotal.toLocaleString();
+  document.getElementById('afterpayPriceCart').textContent = '$' + newAfterpay;
+  document.getElementById('upsellBtn').textContent = '✓ Added';
+  document.getElementById('upsellBtn').classList.add('added');
+}
+
+function updateCartTotal() {
+  let total = selectedProduct.price;
+  if (upsellAdded) total += UPSELL_PRICE;
+  document.getElementById('cartTotal').textContent = '$' + total.toLocaleString();
+  document.getElementById('afterpayPriceCart').textContent = '$' + (total / 4).toFixed(2);
+}
+
+// =============================================
+// CHECKOUT — Redirect to Shopify
+// =============================================
+function goToCheckout(e) {
+  e.preventDefault();
+  if (!selectedProduct) return;
+
+  // Track InitiateCheckout
+  let totalValue = selectedProduct.price;
+  if (upsellAdded) totalValue += UPSELL_PRICE;
+
+  track('track', 'InitiateCheckout', {
+    content_name: selectedProduct.name,
+    value: totalValue,
+    currency: 'AUD'
+  });
+
+  // Build Shopify cart URL
+  // Format: /cart/VARIANT_ID:QUANTITY,VARIANT_ID:QUANTITY
+  let cartPath = '/cart/' + selectedProduct.variantId + ':1';
+  if (upsellAdded) {
+    cartPath += ',' + UPSELL_VARIANT_ID + ':1';
+  }
+
+  // Redirect to Shopify checkout
+  window.location.href = STORE_URL + cartPath;
+}
+
+// =============================================
+// GIFT TIMER
+// =============================================
+function startGiftTimer() {
+  // Set to end of today
+  const now = new Date();
+  const end = new Date(now);
+  end.setHours(23, 59, 59, 999);
+
+  function tick() {
+    const diff = end - new Date();
+    if (diff <= 0) {
+      document.getElementById('giftTimer').textContent = 'Offer ends soon!';
+      return;
+    }
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    document.getElementById('giftTimer').textContent =
+      'Offer ends in ' + h + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+  }
+  tick();
+  setInterval(tick, 1000);
+}
+
+// =============================================
+// SOCIAL PROOF ROTATION
+// =============================================
+function randomiseSocialProof() {
+  const messages = [
+    '14 people viewed this product today',
+    'Someone in QLD purchased a D500 — 3 hours ago',
+    '8 people have this in their cart right now',
+    'Someone in NSW purchased a D400 — 5 hours ago',
+    '22 people viewed this product today',
+    'Someone in VIC purchased a D600 — 1 hour ago'
+  ];
+  const el = document.getElementById('socialProofText');
+  let idx = Math.floor(Math.random() * messages.length);
+  el.textContent = messages[idx];
+
+  setInterval(() => {
+    idx = (idx + 1) % messages.length;
+    el.style.opacity = 0;
+    setTimeout(() => {
+      el.textContent = messages[idx];
+      el.style.opacity = 1;
+    }, 300);
+  }, 5000);
+}
+
+// =============================================
+// SAFE PIXEL TRACKING (won't crash if pixel blocked)
+// =============================================
+function track(eventType, eventName, params) {
+  try {
+    if (typeof fbq === 'function') {
+      fbq(eventType, eventName, params || {});
+    }
+  } catch(e) { /* pixel blocked or not loaded */ }
+}
+
+// =============================================
+// INIT
+// =============================================
+document.addEventListener('DOMContentLoaded', () => {
+  track('trackCustom', 'QuizPageView');
+});
+</script>
+
+</body>
+</html>
